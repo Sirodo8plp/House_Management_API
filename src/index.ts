@@ -19,8 +19,8 @@ async function main() {
 
   app.use("/", routes);
 
-  app.listen(PORT, () => {
-    console.log(`Server is up and running on port ${PORT}.`);
+  app.listen(process.env.PORT || 4000, () => {
+    console.log(`Server is up and running`);
   });
 }
 

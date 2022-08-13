@@ -31,8 +31,8 @@ function main() {
             res.json({ message: "HouseManagement API." });
         });
         app.use("/", index_1.default);
-        app.listen(PORT, () => {
-            console.log(`Server is up and running on port ${PORT}.`);
+        app.listen(process.env.PORT || 4000, () => {
+            console.log(`Server is up and running`);
         });
     });
 }
