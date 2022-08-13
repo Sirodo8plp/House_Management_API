@@ -3,11 +3,8 @@ import cors from "cors";
 import helmet from "helmet";
 import routes from "./routes/index";
 const app = express();
-const corsOptions = {
-  origin: "https://managehouses.netlify.app",
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
