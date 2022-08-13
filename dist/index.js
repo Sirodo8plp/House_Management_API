@@ -18,7 +18,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: process.env.ORIGIN || "http://localhost:3000",
 };
 const PORT = process.env.PORT || 4000;
 app.use((0, cors_1.default)(corsOptions));

@@ -4,7 +4,7 @@ import helmet from "helmet";
 import routes from "./routes/index";
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.ORIGIN || "http://localhost:3000",
 };
 const PORT = process.env.PORT || 4000;
 app.use(cors(corsOptions));
