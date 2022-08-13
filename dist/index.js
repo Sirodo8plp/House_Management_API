@@ -18,9 +18,8 @@ const helmet_1 = __importDefault(require("helmet"));
 const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
 const corsOptions = {
-    origin: process.env.ORIGIN || "http://localhost:3000",
+    origin: "*",
 };
-const PORT = process.env.PORT || 4000;
 app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -28,7 +27,7 @@ app.use((0, helmet_1.default)());
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         app.get("/", (_, res) => {
-            res.json({ message: "HouseManagement API." });
+            res.json({ message: `HouseManagement API.CORS: ${process.env.ORIGIN}` });
         });
         app.use("/", index_1.default);
         app.listen(process.env.PORT || 4000, () => {
