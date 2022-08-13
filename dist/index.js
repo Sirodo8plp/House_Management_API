@@ -18,7 +18,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
 const corsOptions = {
-    origin: "https://managehouses.netlify.app/",
+    origin: "https://managehouses.netlify.app",
 };
 app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
